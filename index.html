@@ -6,144 +6,90 @@
     <title>Kurs Wizualizacji Danych</title>
         <style>
 
-        /* Общие стили для всего тела */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(135deg, #f0f, #0ff, #ff0);
-    background-size: 400% 400%;
-    animation: gradientAnimation 5s ease infinite;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    <style>
+ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-/* Анимация градиента */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
 
-/* Стили заголовков */
-h1, h2 {
-    text-align: center;
-    font-size: 3em;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    background: -webkit-linear-gradient(#ff9d00, #ff0000);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: titleAnimation 3s infinite alternate;
-}
+        p {
+            font-size: 1.1em;
+            margin: 0.5em 0;
+            text-align: center;
+        }
 
-/* Анимация для заголовков */
-@keyframes titleAnimation {
-    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 0, 0, 0.7); }
-    100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 0, 0, 0.8); }
-}
 
-/* Стили формы */
-#quiz {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
-    width: 80%;
-    max-width: 600px;
-    backdrop-filter: blur(10px);
-    transform: rotate(3deg);
-    transition: transform 0.3s ease-in-out;
-}
+        #quiz {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-#quiz:hover {
-    transform: rotate(0deg);
-}
+        ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
 
-/* Стили для списков и вопросов */
-ol {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
+        li {
+            margin-bottom: 15px;
+        }
 
-li {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    position: relative;
-    color: #fff;
-    padding-left: 40px;
-}
+        label {
+            font-size: 1.1em;
+            display: block;
+            margin-left: 20px;
+        }
 
-li::before {
-    content: "🖋️";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.5em;
-    animation: iconAnimation 1.5s infinite alternate;
-}
+        input[type="radio"] {
+            margin-right: 10px;
+        }
 
-@keyframes iconAnimation {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.5); }
-}
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px 0;
+            width: 100%;
+        }
 
-/* Стиль для радио кнопок */
-input[type="radio"] {
-    accent-color: #00ff99;
-    margin-right: 15px;
-}
+        button:hover {
+            background-color: #2980b9;
+        }
 
-/* Стиль для кнопки */
-button {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(90deg, #ff0000, #ff7300);
-    border: none;
-    border-radius: 50px;
-    color: #fff;
-    font-size: 1.5em;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-    transition: background 0.5s ease, box-shadow 0.3s ease-in-out;
-    margin-top: 20px;
-}
 
-button:hover {
-    background: linear-gradient(90deg, #ff0000, #ff00c3);
-    box-shadow: 0 0 30px rgba(255, 0, 195, 0.8);
-}
+        #result {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #27ae60;
+        }
 
-/* Стили для результата */
-#result {
-    font-size: 2em;
-    color: #00ff99;
-    text-align: center;
-    margin-top: 20px;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    animation: resultAnimation 3s infinite alternate;
-}
+       
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
 
-@keyframes resultAnimation {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.2); }
-}
-
-/* Стиль для ссылок */
-a {
-    color: #ff7300;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #ff0000;
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -153,7 +99,7 @@ a:hover {
 
     <h2>kurs pdf:</h2>
     <ul>
-        <li><a href="https://sviatoslavbeiar.github.io/kurs-wizualizacja-danych/kurs-wizualizacja-danych.pdf" target="_blank">📄 Prezentacja w PDF</a></li>
+        <li><a href="https://sviatoslavbeiar.github.io/kurs-wizualizacja-danych/kurs-wizualizacja-danych.pdf" target="_blank">        📄     Prezentacja w PDF</a></li>
     </ul>
 
     <h2>Test wiedzy</h2>
