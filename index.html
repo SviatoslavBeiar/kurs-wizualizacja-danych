@@ -9,7 +9,7 @@
     <h1>Witaj w kursie wizualizacji danych!</h1>
     <p>Ten kurs pomoże Ci nauczyć się podstaw wizualizacji danych przy użyciu różnych narzędzi.</p>
 
-    <h2>Moduły kursu:</h2>
+    <h2>kurs pdf:</h2>
     <ul>
         <li><a href="https://sviatoslavbeiar.github.io/kurs-wizualizacja-danych/kurs-wizualizacja-danych.pdf" target="_blank">📄 Prezentacja w PDF</a></li>
     </ul>
@@ -88,11 +88,71 @@
                 <label><input type="radio" name="q9" value="C"> C) Do pisania e-maili</label><br>
                 <label><input type="radio" name="q9" value="D"> D) Do grania w gry</label>
             </li>
+
+            <li>
+                <p>10. Jaką technologię wybrać, jeśli nie umiesz programować?</p>
+                <label><input type="radio" name="q10" value="A"> A) D3.js</label><br>
+                <label><input type="radio" name="q10" value="B"> B) Chart.js</label><br>
+                <label><input type="radio" name="q10" value="C"> C) No-Code Tools</label><br>
+                <label><input type="radio" name="q10" value="D"> D) JavaScript</label>
+            </li>
+
+            <li>
+                <p>11. Czy Chart.js obsługuje animacje wykresów?</p>
+                <label><input type="radio" name="q11" value="A"> A) Tak</label><br>
+                <label><input type="radio" name="q11" value="B"> B) Nie</label><br>
+                <label><input type="radio" name="q11" value="C"> C) Tylko na telefonie</label><br>
+                <label><input type="radio" name="q11" value="D"> D) Tylko w wersji offline</label>
+            </li>
+
+            <li>
+                <p>12. Która technologia daje największą kontrolę nad wyglądem wykresów?</p>
+                <label><input type="radio" name="q12" value="A"> A) D3.js</label><br>
+                <label><input type="radio" name="q12" value="B"> B) Google Charts</label><br>
+                <label><input type="radio" name="q12" value="C"> C) Chart.js</label><br>
+                <label><input type="radio" name="q12" value="D"> D) Microsoft Word</label>
+            </li>
         </ol>
 
         <button type="submit">Sprawdź odpowiedzi</button>
     </form>
+ <h2>Wynik:</h2>
+    <p id="result"></p>
 
+    <script>
+        function checkAnswers() {
+            var correctAnswers = {
+                q1: "A",
+                q2: "C",
+                q3: "A",
+                q4: "B",
+                q5: "D",
+                q6: "C",
+                q7: "A",
+                q8: "B",
+                q9: "A",
+                q10: "C",
+                q11: "A",
+                q12: "A"
+            };
+
+            var totalCorrect = 0;
+            var quiz = document.forms["quiz"];
+
+            for (var question in correctAnswers) {
+                var answer = quiz[question];
+                for (var i = 0; i < answer.length; i++) {
+                    if (answer[i].checked && answer[i].value == correctAnswers[question]) {
+                        totalCorrect++;
+                    }
+                }
+            }
+
+            var resultText = "Zgadłeś " + totalCorrect + " z 12.";
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+    
     <h2>Odpowiedzi:</h2>
     <p>1 - A</p>
     <p>2 - C</p>
@@ -109,4 +169,5 @@
 
 </body>
 </html>
+
 
